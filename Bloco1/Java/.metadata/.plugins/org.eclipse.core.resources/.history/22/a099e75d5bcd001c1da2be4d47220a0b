@@ -24,6 +24,7 @@ public class Exercicio3 {
 			System.out.println("Infantil");
 		} else if (idade >= 15 && idade <= 17) {
 			System.out.println("Juvenil");
+
 		} else {
 			System.out.println("Adulto");
 		}
