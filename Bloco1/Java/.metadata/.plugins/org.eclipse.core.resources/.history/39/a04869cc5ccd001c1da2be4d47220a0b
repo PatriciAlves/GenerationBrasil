@@ -10,10 +10,6 @@ public class Exercicio2 {
 		Scanner leia = new Scanner(System.in);
 
 		int a, b, c;
-		
-		System.out.println("====================================");
-		System.out.println("    PROGRAMA DE ORDEM CRESCENTE    ");
-		System.out.println("====================================");
 
 		System.out.println("Digite primeiro numero inteiro: ");
 		a = leia.nextInt();

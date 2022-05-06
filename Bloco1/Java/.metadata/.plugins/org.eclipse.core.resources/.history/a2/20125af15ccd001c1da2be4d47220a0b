@@ -8,10 +8,6 @@ public class Exercicio1 {
 	public static void main(String[] args) {
 		Scanner ler = new Scanner(System.in);
 		int a, b, c;
-		
-		System.out.println("====================================");
-		System.out.println("   IDENTIFICADOR DE  MAIOR NUMERO ");
-		System.out.println("====================================");
 
 		System.out.println("Digite o primeiro valor: ");
 		a = ler.nextInt();
