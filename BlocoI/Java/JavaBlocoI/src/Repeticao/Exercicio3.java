@@ -9,13 +9,13 @@ idade for =-99. (WHILE)*/
 public class Exercicio3 {
 
 	public static void main(String[] args) {
-		Scanner ler = new Scanner(System.in);
-		
-		int idade = 0, cont21 = 0, cont50 = 0;
-		
 		System.out.println("=======================================");
 		System.out.println("       PROGRAMA CONTADOR DE IDADE      ");
 		System.out.println("=======================================");
+		
+		Scanner ler = new Scanner(System.in);
+		
+		int idade = 0, cont21 = 0, cont50 = 0;
 		
 		
 		System.out.println("Digite a idade (ou -99 para encerrar): ");
@@ -27,7 +27,7 @@ public class Exercicio3 {
 				idade = ler.nextInt();
 				
 				if (idade < 21) {
-					cont21 = cont21 + 1;
+					cont21 =+ 1;
 				}
 				if (idade > 50) {
 					cont50 = cont50 + 1;

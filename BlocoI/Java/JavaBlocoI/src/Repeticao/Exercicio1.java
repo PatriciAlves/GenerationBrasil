@@ -9,14 +9,14 @@ public class Exercicio1 {
 
 	public static void main(String[] args) {
 
-		int i;
 		
 		System.out.println("==============================");
 		System.out.println("  PROGRAMA DE DIVISÃO POR 5   ");
 		System.out.println("==============================");
 		
+		int i;
 
-		for (i = 1000; i < 2000; i++) {
+		for (i = 1000; i < 2000; i++) { // menor que 
 			if (i % 11 == 5) {
 				System.out.println(i);
 			}

@@ -11,13 +11,13 @@ public class Exercicio3 {
 
 	public static void main(String[] args) {
 
-		Scanner ler = new Scanner(System.in);
-		int idade;
-		
 		System.out.println("====================================");
 		System.out.println("  PROGRAMA CLASSIFICADOR DE IDADE  ");
 		System.out.println("====================================");
 
+		Scanner ler = new Scanner(System.in);
+		int idade;
+		
 		System.out.println("Digite a idade:  ");
 		idade = ler.nextInt();
 
