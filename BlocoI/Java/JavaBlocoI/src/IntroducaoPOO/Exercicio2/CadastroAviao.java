@@ -40,6 +40,7 @@ public class CadastroAviao {
 		
 		
 		aviao1.aviao();
+		ler.close();
 		
 	}
 
