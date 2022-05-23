@@ -12,7 +12,7 @@ public class Animal {
 	
 
 	public Animal(String nome, int idade) {
-		super();
+		
 		this.nome = nome;
 		this.idade = idade;
 	}
