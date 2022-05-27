@@ -37,6 +37,6 @@ INSERT INTO tb_cursos(curso, tempo_horas, preco_mes, categoria_id)VALUES("Game D
 SELECT * FROM tb_cursos WHERE preco_mes > 500;
 SELECT * FROM tb_cursos WHERE preco_mes BETWEEN 600 and 1000;
 SELECT * FROM tb_cursos WHERE curso LIKE "%J%";
-SELECT * FROM tb_cursos INNER JOIN tb_categorias on tb_cursos.categoria_id = tb_categorias.id;
+SELECT * FROM tb_cursos INNER JOIN tb_categorias on tb_cursos.categoria_id = tb_categorias.id;tb_postagenstb_postagens
 SELECT * FROM tb_cursos INNER JOIN tb_categorias on tb_cursos.categoria_id = tb_categorias.id
 WHERE tipo LIKE "%Engenharia%";
