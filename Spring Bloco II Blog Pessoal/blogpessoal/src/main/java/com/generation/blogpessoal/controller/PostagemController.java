@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.generation.blogpessoal.model.Postagem;
 import com.generation.blogpessoal.repository.PostagemRepository;
+import com.generation.blogpessoal.repository.TemaRepository;
 
 @RestController
 @RequestMapping("/postagens")
@@ -27,6 +28,9 @@ public class PostagemController {
 
 	@Autowired
 	private PostagemRepository postagemRepository;
+	
+	@Autowired
+	private TemaRepository temaRepository;
 
 	@GetMapping
 	public ResponseEntity<List<Postagem>> getAll() {
@@ -47,18 +51,17 @@ public class PostagemController {
 	}
 
 	@PostMapping
-	public ResponseEntity<Postagem> putPostagem(@Valid @RequestBody Postagem postagem) {
+	public ResponseEntity<Postagem> postPostagem(@Valid @RequestBody Postagem postagem) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(postagemRepository.save(postagem));
 	}
 
 	@PutMapping
-	public ResponseEntity<?> postPostagem(@Valid @RequestBody Postagem postagem) {
-		if (postagem.getId() == null) {
-			return new ResponseEntity<String>("Porfavor informe o ID da postagem que deseja atualizar",
-					HttpStatus.BAD_REQUEST);
+	public ResponseEntity<Postagem> putPostagem(@Valid @RequestBody Postagem postagem) {
+		if (postagemRepository.existsById(postagem.getId())&& temaRepository.existsById(postagem.getTema().getId())) {
+			return ResponseEntity.ok(postagemRepository.save(postagem));
 		} else {
 
-			return ResponseEntity.status(HttpStatus.OK).body(postagemRepository.save(postagem));
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
 	}
 
@@ -66,6 +69,7 @@ public class PostagemController {
 	public ResponseEntity<?> deletePostagem(@PathVariable Long id) {
 		return postagemRepository.findById(id).map(resposta -> {
 			postagemRepository.deleteById(id);
+			System.out.println("Id deletado");
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 
 		}).orElse(ResponseEntity.notFound().build());
