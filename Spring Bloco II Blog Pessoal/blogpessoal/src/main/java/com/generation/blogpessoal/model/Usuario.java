@@ -15,9 +15,12 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import lombok.Data;
 
-@Data
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 @Entity
 @Table(name= "tb_usuarios")
 public class Usuario {
@@ -42,5 +45,20 @@ public class Usuario {
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	public List<Postagem> postagem;
+	
+	// Primeiro método Construtor
+
+		public Usuario(Long id, String nome, String usuario, String senha, String foto) {
+			this.id = id;
+			this.nome = nome;
+			this.usuario = usuario;
+			this.senha = senha;
+			this.foto = foto;
+		}
+
+		// Segundo método Construtor
+
+		public Usuario() {	}
+
 
 }
